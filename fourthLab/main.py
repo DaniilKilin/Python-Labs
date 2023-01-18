@@ -8,13 +8,11 @@ a = list(map(int, input().split()))
 print(list(a))
 
 #2 на базе данных полученных при парсинге
-url = 'https://www.statisticbrain.com/fun-facts/'
+url = 'https://quotes.toscrape.com/'
 response = requests.get(url)
 soup = BeautifulSoup(response.text, 'lxml')
-table = soup.find('table', cellspacing="0", cellpadding="2")
-td_all = table.find_all('td')
-fact_list = list(map(lambda temp: temp.contents[0], td_all))
-fact_list.pop(0)
+quotes = soup.find_all('span', class_='text')
+fact_list = list(map(lambda temp: temp.contents[0], quotes))
 print(fact_list)
 
 # 3 на базе данных из датасета
