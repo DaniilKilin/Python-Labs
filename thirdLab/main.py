@@ -16,11 +16,7 @@ medium[N] = sum_of_range[N] / N
 print(medium[n] == Medium)
 print()
 
-pyDatalog.create_terms('arr, median, Median')
-arr = []
-for i in range(nn):
-    arr.append(randrange(5, 30))
-arr.sort()
+pyDatalog.create_terms('median, Median')
 
 median = nn/2
 print(median == Median)
